@@ -1,9 +1,11 @@
-<div>
-  <!-- <h1>Profiles</h1> -->
-  <app-profiles [profiles]="profiles" [selectedProfile]="selectedProfile" (profileSelected)="handleProfileSelection($event)"></app-profiles>
-</div>
 
-<div>
-  <!-- <h1>Map</h1> -->
-  <app-map [profiles]="profiles" [selectedProfile]="selectedProfile"></app-map>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <app-profiles [profiles]="profiles" [selectedProfile]="selectedProfile" (profileSelected)="handleProfileSelection($event)"></app-profiles>
+    </div>
+    <div class="col-md-9">
+      <app-map [profiles]="profiles" [selectedProfile]="selectedProfile"></app-map>
+    </div>
+  </div>
 </div>
