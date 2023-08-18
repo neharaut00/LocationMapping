@@ -1,1 +1,5 @@
-<p>profiles works!</p>
+
+<div *ngFor="let profile of profiles">
+    <p>{{ profile.name }}</p>
+    <p>Latitude: {{ profile.latitude }}, Longitude: {{ profile.longitude }}</p>
+  </div>
