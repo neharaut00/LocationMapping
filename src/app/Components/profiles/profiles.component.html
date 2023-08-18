@@ -1,5 +1,5 @@
-
-<div *ngFor="let profile of profiles">
-    <p>{{ profile.name }}</p>
-    <p>Latitude: {{ profile.latitude }}, Longitude: {{ profile.longitude }}</p>
+<div *ngFor="let profile of profiles" class="d-flex justify-content-between align-items-center mb-3">
+    <p class="m-0">{{ profile.name }}</p>
+    <!-- <p class="m-0">Latitude: {{ profile.latitude }}, Longitude: {{ profile.longitude }}</p> -->
+    <button class="btn btn-primary" (click)="focusOnProfile(profile)">Summary</button>
   </div>

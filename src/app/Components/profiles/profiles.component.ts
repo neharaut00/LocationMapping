@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-profiles',
@@ -6,5 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./profiles.component.css']
 })
 export class ProfilesComponent {
-  @Input() profiles: any[]= [];
+  @Input() profiles: any[] = [];
+  @Input() selectedProfile: any;
+  @Output() profileSelected = new EventEmitter<any>();
+
+  focusOnProfile(profile: any) {
+    this.profileSelected.emit(profile);
+  }
 }

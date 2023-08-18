@@ -1,9 +1,9 @@
 <div>
-  <h1>Profiles</h1>
-  <app-profiles [profiles]="profiles"></app-profiles>
+  <!-- <h1>Profiles</h1> -->
+  <app-profiles [profiles]="profiles" [selectedProfile]="selectedProfile" (profileSelected)="handleProfileSelection($event)"></app-profiles>
 </div>
 
 <div>
-  <h1>Map</h1>
-  <app-map [profiles]="profiles"></app-map>
+  <!-- <h1>Map</h1> -->
+  <app-map [profiles]="profiles" [selectedProfile]="selectedProfile"></app-map>
 </div>

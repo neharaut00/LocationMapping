@@ -1,5 +1,5 @@
 import { style } from '@angular/animations';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import * as mapboxgl from 'mapbox-gl';
 import { environment } from 'src/app/environments/environment';
 @Component({
@@ -7,28 +7,30 @@ import { environment } from 'src/app/environments/environment';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, OnChanges {
   map!: mapboxgl.Map;
-  style = 'mapbox://styles/mapbox/streets-v12';
-  lat = 20.5937;
-  lng = 78.9629;
-  zoom = 5;
 
   constructor() { 
     (mapboxgl as any).accessToken = environment.mapbox.accessToken;
   }
-  @Input() profiles: any[]= [];
+  @Input() profiles: any[] = [];
+  @Input() selectedProfile: any;
   ngOnInit(): void {
     this.buildMap();
     this.addMarkers();
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['selectedProfile'] && !changes['selectedProfile'].firstChange) {
+      this.focusMapOnProfile(changes['selectedProfile'].currentValue);
+    }
+  }
   buildMap() {
     const navControl = new mapboxgl.NavigationControl();
     this.map = new mapboxgl.Map({
-      container: 'map',
-      style: this.style,
-      zoom: this.zoom,
-      center: [this.lng, this.lat],
+      container : 'map',
+      style: 'mapbox://styles/mapbox/streets-v12',
+      center: [78.9629, 20.5937],
+      zoom : 5,
       attributionControl: false
     })
     this.map.addControl(navControl, 'top-right');
@@ -40,6 +42,14 @@ export class MapComponent implements OnInit {
         .setLngLat([profile.longitude, profile.latitude])
         .addTo(this.map);
     });
+  }
+  focusMapOnProfile(selectedProfile: any) {
+    if (selectedProfile) {
+      this.map.flyTo({
+        center: [selectedProfile.longitude, selectedProfile.latitude],
+        zoom: 10
+      });
+    }
   }
   
 }
