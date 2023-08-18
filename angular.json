@@ -25,12 +25,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.js",
+              "./node_modules/jquery/dist/jquery.js"
+            ]
           },
+
           "configurations": {
             "production": {
+              "mapboxAccessToken": "pk.eyJ1IjoibmVoYXJhdXQwMCIsImEiOiJjbGxnemkyMmIxNm0wM29xeWhhOWwzYm54In0.ykqRKC1dQEq-FwKmoAuctQ",
               "budgets": [
                 {
                   "type": "initial",
