@@ -14,8 +14,7 @@ The Location Mapping Web Application is deployed and accessible at the following
 
 ## Screenshots
 ![WhatsApp Image 2023-08-19 at 2 10 15 PM](https://github.com/neharaut00/LocationMapping/assets/88868603/ea091c1a-9d46-41fe-bfc1-0556d1b99a40)
-
-
+![WhatsApp Image 2023-08-19 at 2 28 54 PM](https://github.com/neharaut00/LocationMapping/assets/88868603/b190730b-d7f2-43b1-a800-a7c82a88a3a9)
 
 https://github.com/neharaut00/LocationMapping/assets/88868603/bc35684e-3175-4ae3-81db-57c073b90c39
 
