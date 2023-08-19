@@ -38,7 +38,7 @@ export class MapComponent implements OnInit, OnChanges {
   }
   addMarkers() {
     this.profiles.forEach(profile => {
-      new mapboxgl.Marker()
+      new mapboxgl.Marker({color: 'red',})
         .setLngLat([profile.longitude, profile.latitude])
         .addTo(this.map);
     });

@@ -1,0 +1,47 @@
+.main-container{
+    margin:0;
+    margin-right: 0;
+    overflow-y: hidden;
+   
+}
+
+.container{
+    margin-left:0;
+    margin-right: 0;
+    max-width: 100%;
+    paddinng: 0;
+    overflow-y: hidden;
+    
+}
+
+.row{
+    overflow-y: hidden;
+}
+
+.profile-list-container {
+    max-height: calc(100vh); /* Adjust padding/margins as needed */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 10x;
+  }
+
+  .profile-list-container::-webkit-scrollbar {
+    width: 0; /* Hide the scrollbar on Webkit browsers (like Chrome, Safari) */
+  }
+  
+  .profile-list-container {
+    -ms-overflow-style: none; /* Hide the scrollbar on IE and Edge */
+    scrollbar-width: none; /* Hide the scrollbar on Firefox */
+  }
+
+  @media (max-width: 768px){
+    .profile-list-container {
+        max-height: 40vh;
+      }
+    .map-container{
+        overflow-x: hidden;
+    }
+    
+}
